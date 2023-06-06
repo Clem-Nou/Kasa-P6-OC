@@ -1,0 +1,36 @@
+.error_page {
+  color: #ff6060;
+  text-align: center;
+}
+
+.error_title {
+  font-weight: 700;
+  font-size: 288px;
+  margin: 0;
+}
+
+.error_subtitle {
+  font-weight: 500;
+  font-size: 36px;
+}
+
+.error_page a {
+  color: #ff6060;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .error_title {
+    font-weight: 700;
+    font-size: 96px;
+  }
+  .error_subtitle {
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .error_page a {
+    font-weight: 500;
+    font-size: 14px;
+  }
+}

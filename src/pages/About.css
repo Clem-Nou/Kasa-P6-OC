@@ -1,0 +1,12 @@
+.about_page {
+  padding-inline: 100px;
+}
+
+.about_container {
+  padding-inline: 126px;
+}
+@media screen and (max-width: 768px) {
+  .about_page {
+    padding-inline: 21px;
+  }
+}

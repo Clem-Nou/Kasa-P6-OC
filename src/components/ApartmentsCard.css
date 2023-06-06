@@ -1,0 +1,60 @@
+.apartment {
+  border-radius: 25px;
+}
+
+.apartment_img {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.apartment_img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.apartment_info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  color: #ffffff;
+  border-bottom-left-radius: 25px;
+  width: 100%;
+}
+
+.apartment_info h3 {
+  margin: 0;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.apartment:hover .apartment_img img {
+  transform: scale(1.1);
+}
+
+.apartment:hover .apartment_info {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .apartment_img {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+}

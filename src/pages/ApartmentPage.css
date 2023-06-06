@@ -1,0 +1,21 @@
+.apartment_page {
+  padding-inline: 100px;
+  color: #ff6060;
+}
+
+.apartment_description_area {
+  display: flex;
+  gap: 76px;
+  padding-bottom: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  .apartment_page {
+    padding-inline: 21px;
+  }
+
+  .apartment_description_area {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

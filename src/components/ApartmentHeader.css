@@ -1,0 +1,96 @@
+.apartment_header {
+  display: flex;
+}
+
+.apartment_header h2 {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  color: #ff6060;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.apartment_tags span {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #ff6060;
+  border-radius: 10px;
+  text-align: center;
+  padding: 3.5px;
+}
+
+.apartment_owner_stars {
+  display: flex;
+  margin-top: 15px;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.star_off {
+  color: #e3e3e3;
+}
+
+.apartment_title {
+  flex-grow: 1;
+  margin-top: 6px;
+}
+
+.apartment_owner_badge {
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  background-color: #c4c4c4;
+  margin-left: 10px;
+}
+
+.apartment_tags {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 115px));
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.apartment_owner {
+  display: flex;
+  flex-direction: column;
+}
+
+.apartment_owner_details {
+  display: flex;
+}
+
+.apartment_owner_details h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 6px;
+}
+
+.apartment_title h1 {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  color: #ff6060;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .apartment_header {
+    flex-direction: column;
+  }
+
+  .apartment_owner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .apartment_owner_details {
+    order: 1;
+  }
+}

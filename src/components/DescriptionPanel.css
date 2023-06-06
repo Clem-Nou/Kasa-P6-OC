@@ -1,0 +1,32 @@
+.description_panel {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.description_panel_title {
+  display: flex;
+  color: #ffffff;
+  background-color: #ff6060;
+  padding: 13px 20px;
+  margin: 10px 0 0 0;
+  border-radius: 10px; /* Enlever ??? */
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.description_panel_content {
+  color: #ff6060;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  margin-block: 0;
+  padding: 40px 20px;
+  position: relative;
+  top: -0.4rem;
+  z-index: -1;
+}
+
+.fa-chevron-up {
+  font-size: 1.2em;
+}

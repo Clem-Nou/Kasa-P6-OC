@@ -1,12 +1,18 @@
 .apartment_page {
   padding-inline: 100px;
   color: #ff6060;
+  min-height: 73vh;
 }
 
 .apartment_description_area {
   display: flex;
   gap: 76px;
-  padding-bottom: 14px;
+  margin-bottom: 14px;
+}
+
+.apartment_description,
+.collapse_equipment {
+  flex: 1;
 }
 
 @media screen and (max-width: 768px) {

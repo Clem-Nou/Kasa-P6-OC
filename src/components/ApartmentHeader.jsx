@@ -1,33 +1,48 @@
 import React from 'react'
 import './ApartmentHeader.css'
 
-export function ApartmentHeader() {
+export function ApartmentHeader({
+  title,
+  location,
+  tags,
+  hostName,
+  hostPicture,
+  rating
+}) {
+  const starCount = 5
+  const [firstName, lastName] = hostName.split(' ')
+
   return (
     <div className="apartment_header">
       <div className="apartment_title">
-        <h1>Cozy loft on Canal Saint Martin</h1>
-        <h2>Paris, Ile de France</h2>
+        <h1>{title}</h1>
+        <h2>{location}</h2>
         <div className="apartment_tags">
-          <span>Cozy</span>
-          <span>Canal</span>
-          <span>Paris</span>
+          {tags.map((tag, index) => (
+            <span key={index}>{tag}</span>
+          ))}
         </div>
       </div>
 
       <div className="apartment_owner">
         <div className="apartment_owner_details">
           <h2>
-            <span>Alexandre</span>
-            <span>Dumas</span>
+            <span>{firstName}</span>
+            <span>{lastName}</span>
           </h2>
-          <div className="apartment_owner_badge"></div>
+          <div className="apartment_owner_badge">
+            <img src={hostPicture} alt="Host" />
+          </div>
         </div>
         <div className="apartment_owner_stars">
-          <i className="fa-solid fa-star star_on"></i>
-          <i className="fa-solid fa-star star_on"></i>
-          <i className="fa-solid fa-star star_on"></i>
-          <i className="fa-solid fa-star star_off"></i>
-          <i className="fa-solid fa-star star_off"></i>
+          {[...Array(starCount)].map((_, index) => (
+            <i
+              className={`fa-solid fa-star ${
+                index < rating ? 'star_on' : 'star_off'
+              }`}
+              key={index}
+            ></i>
+          ))}
         </div>
       </div>
     </div>

@@ -1,22 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './ApartmentsCard.css'
-import apartmentsData from '../data/apartments.json'
 
-function apartmentCard() {
+function ApartmentCard({ apartment }) {
   return (
-    <>
-      {apartmentsData.map(apartment => (
-        <div key={apartment.id} className="apartment">
-          <div className="apartment_img">
-            <img src={apartment.cover} alt={apartment.title} />
-            <div className="apartment_info">
-              <h3>{apartment.title}</h3>
-            </div>
-          </div>
+    <Link to={`/apartment/${apartment.id}`} className="apartment">
+      <div className="apartment_img">
+        <img src={apartment.cover} alt={apartment.title} />
+        <div className="apartment_info">
+          <h3>{apartment.title}</h3>
         </div>
-      ))}
-    </>
+      </div>
+    </Link>
   )
 }
 
-export default apartmentCard
+export default ApartmentCard

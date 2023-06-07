@@ -1,12 +1,25 @@
 import React from 'react'
 import './Banner.css'
-function Banner() {
+
+export function Banner(props) {
   return (
-    <div className="banner">
-      <div className="banner_cover">
-        <h1 className="banner_title">Chez vous partout et ailleurs</h1>
-      </div>
-    </div>
+    <section
+      className={
+        props.source === 'about'
+          ? 'banner-container banner-container-about'
+          : 'banner-container'
+      }
+    >
+      <div
+        className={
+          props.source === 'about'
+            ? 'banner-overlay banner-overlay-about'
+            : 'banner-overlay'
+        }
+      ></div>
+      <img src={props.img} alt={props.alt} />
+      {props.text && <h1 className="banner-header">{props.text}</h1>}
+    </section>
   )
 }
 

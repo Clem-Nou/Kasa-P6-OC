@@ -3,17 +3,27 @@
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
+  position: relative;
+  overflow: hidden;
+  transition: height 0.3s ease;
+  height: 6rem; /* Adjust the initial height as needed */
+}
+
+.description_panel.open {
+  height: auto;
 }
 
 .description_panel_title {
   display: flex;
+  flex-grow: 1;
   color: #ffffff;
   background-color: #ff6060;
   padding: 13px 20px;
   margin: 10px 0 0 0;
-  border-radius: 10px; /* Enlever ??? */
+  border-radius: 10px;
   justify-content: space-between;
   cursor: pointer;
+  transition: background-color 0.3s ease; /* Add transition property */
 }
 
 .description_panel_content {
@@ -25,8 +35,13 @@
   position: relative;
   top: -0.4rem;
   z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform-origin: top;
+  transform: scaleY(0);
 }
 
-.fa-chevron-up {
-  font-size: 1.2em;
+.description_panel.open .description_panel_content {
+  opacity: 1;
+  transform: scaleY(1);
 }

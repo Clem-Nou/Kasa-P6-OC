@@ -1,22 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './DescriptionPanel.css'
 
-export function DescriptionPanel() {
+export function DescriptionPanel({ title, content, openByDefault }) {
+  const [isContentVisible, setIsContentVisible] = useState(openByDefault)
+
+  const toggleContent = () => {
+    setIsContentVisible(!isContentVisible)
+  }
+
   return (
-    <div className="description_panel">
-      <h3 className="description_panel_title">
-        <span>Description</span>
-        <i className="fa-solid fa-chevron-up"></i>
+    <div className={`description_panel ${isContentVisible ? 'open' : ''}`}>
+      <h3 className="description_panel_title" onClick={toggleContent}>
+        <span>{title}</span>
+        {isContentVisible ? (
+          <i className="fa-solid fa-chevron-up"></i>
+        ) : (
+          <i className="fa-solid fa-chevron-down"></i>
+        )}
       </h3>
 
-      <p className="description_panel_content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-        laudantium, rem iste dolore magni omnis. Laborum ad deleniti
-        consequuntur expedita tenetur at provident cumque, fugit velit enim
-        dolore molestiae sed, fuga aliquid nesciunt! Cumque pariatur ducimus
-        libero nemo enim inventore voluptatibus, maxime magnam neque. Ipsa
-        accusamus quam nam necessitatibus officiis.
-      </p>
+      <div className="description_panel_content">{content}</div>
     </div>
   )
 }

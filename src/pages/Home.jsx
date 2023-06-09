@@ -10,11 +10,13 @@ function Home() {
   return (
     <div>
       <Main>
+        {/* Composant Banner pour afficher la bannière principale */}
         <Banner
           img={HeaderBanner}
           alt={'Chez vous, partout et ailleurs'}
           text={'Chez vous, partout et ailleurs'}
         />
+        {/* Composant ApartmentGrid pour afficher la grille des appartements */}
         <ApartmentGrid />
       </Main>
     </div>

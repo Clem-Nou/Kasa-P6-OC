@@ -24,10 +24,10 @@ export function Slideshow({ photos }) {
   }
 
   useEffect(() => {
-    // Add event listener for keyboard navigation on component mount
+    // Ajoute un écouteur d'événement pour la navigation au clavier au montage du composant
     window.addEventListener('keydown', handleKeyDown)
 
-    // Clean up the event listener on component unmount
+    // Nettoie l'écouteur d'événement au démontage du composant
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
     }
@@ -35,6 +35,7 @@ export function Slideshow({ photos }) {
 
   return (
     <section className="listing-slideshow">
+      {/* Bouton précédent */}
       <span
         className={
           numberOfImages > 1
@@ -46,6 +47,7 @@ export function Slideshow({ photos }) {
         <img src={backButton} alt="back button" />
       </span>
 
+      {/* Affichage des images du diaporama */}
       {photos.map((item, index) => (
         <img
           src={item}
@@ -58,6 +60,7 @@ export function Slideshow({ photos }) {
         />
       ))}
 
+      {/* Bouton suivant */}
       <span
         className={
           numberOfImages > 1
@@ -69,6 +72,7 @@ export function Slideshow({ photos }) {
         <img src={forwardButton} alt="forward button" />
       </span>
 
+      {/* Compteur du diaporama */}
       <div className="slideshow-counter">
         {currentImg + 1}/{numberOfImages}
       </div>

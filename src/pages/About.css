@@ -4,9 +4,14 @@
 
 .about_container {
   padding-inline: 126px;
+  padding-bottom: 20px;
 }
 @media screen and (max-width: 768px) {
   .about_page {
     padding-inline: 21px;
+  }
+
+  .about_container {
+    padding-inline: 0px;
   }
 }

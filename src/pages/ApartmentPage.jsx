@@ -25,10 +25,13 @@ function ApartmentPage() {
   const hostPicture = accommodation.host.picture
   const picturesList = accommodation.pictures
   const rating = accommodation.rating
+
   return (
     <main className="apartment_page">
+      {/* Composant Slideshow pour afficher les photos */}
       <Slideshow photos={picturesList} />
 
+      {/* Composant ApartmentHeader pour afficher les informations de l'appartement */}
       <ApartmentHeader
         title={accommodation.title}
         location={accommodation.location}
@@ -46,12 +49,14 @@ function ApartmentPage() {
             content={accommodation.description}
           />
         </div>
+
         {/* Équipements du logement */}
         <div className="collapse_equipment">
           <DescriptionPanel
             title="Equipements"
             content={
               <ul className="equipment_container">
+                {/* Itération sur la liste des équipements */}
                 {equipments.map(equipment => (
                   <li
                     key={`${accommodation.id}-${equipment}`}

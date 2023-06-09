@@ -10,6 +10,7 @@ export function Banner(props) {
           : 'banner-container'
       }
     >
+      {/* Overlay du banner */}
       <div
         className={
           props.source === 'about'
@@ -17,7 +18,11 @@ export function Banner(props) {
             : 'banner-overlay'
         }
       ></div>
+
+      {/* Image du banner */}
       <img src={props.img} alt={props.alt} />
+
+      {/* Texte du banner */}
       {props.text && <h1 className="banner-header">{props.text}</h1>}
     </section>
   )

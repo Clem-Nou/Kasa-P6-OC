@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
+import { createBrowserRouter, Outlet } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../layout/Footer'
 import Home from '../pages/Home'
@@ -24,7 +24,7 @@ export const router = createBrowserRouter([
     element: <HeaderFooterLayout />, // Utilisation du layout principal pour toutes les routes
     errorElement: <ErrorPageNotFound />, // Utilisation de la page d'erreur 404 pour les erreurs de route
     children: [
-      { path: '/', element: <Home /> }, // Route pour la page d'accueil
+      { path: '/home', element: <Home /> }, // Route pour la page d'accueil
       { path: '/apartment/:id', element: <ApartmentPage /> }, // Route pour la page d'un appartement spécifique
       { path: '/about', element: <About /> } // Route pour la page "À propos"
     ]

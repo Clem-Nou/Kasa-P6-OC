@@ -19,12 +19,15 @@ function ApartmentPage() {
   }
 
   // Récupération des valeurs du logement pour les stocker dans des variables
-  const tags = accommodation.tags
-  const equipments = accommodation.equipments
-  const hostName = accommodation.host.name
-  const hostPicture = accommodation.host.picture
-  const picturesList = accommodation.pictures
-  const rating = accommodation.rating
+  const {
+    tags,
+    equipments,
+    host: { name: hostName, picture: hostPicture },
+    pictures: picturesList,
+    rating,
+    title,
+    location
+  } = accommodation
 
   return (
     <main className="apartment_page">
@@ -33,8 +36,8 @@ function ApartmentPage() {
 
       {/* Composant ApartmentHeader pour afficher les informations de l'appartement */}
       <ApartmentHeader
-        title={accommodation.title}
-        location={accommodation.location}
+        title={title}
+        location={location}
         tags={tags}
         hostName={hostName}
         hostPicture={hostPicture}

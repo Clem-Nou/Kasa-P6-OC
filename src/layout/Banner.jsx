@@ -1,11 +1,11 @@
 import React from 'react'
 import './Banner.css'
 
-export function Banner(props) {
+export function Banner({ img, text, alt, source }) {
   return (
     <section
       className={
-        props.source === 'about'
+        source === 'about'
           ? 'banner-container banner-container-about'
           : 'banner-container'
       }
@@ -13,17 +13,17 @@ export function Banner(props) {
       {/* Overlay du banner */}
       <div
         className={
-          props.source === 'about'
+          source === 'about'
             ? 'banner-overlay banner-overlay-about'
             : 'banner-overlay'
         }
       ></div>
 
       {/* Image du banner */}
-      <img src={props.img} alt={props.alt} />
+      <img src={img} alt={alt} />
 
       {/* Texte du banner */}
-      {props.text && <h1 className="banner-header">{props.text}</h1>}
+      {text && <h1 className="banner-header">{text}</h1>}
     </section>
   )
 }

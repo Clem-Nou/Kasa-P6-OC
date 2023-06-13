@@ -1,6 +1,6 @@
 import React from 'react'
 import './ErrorPageNotFound.css'
-import Navbar from '../components/Navbar'
+import Navbar from '../layout/Navbar'
 import Main from '../layout/Main'
 import { NavLink } from 'react-router-dom'
 

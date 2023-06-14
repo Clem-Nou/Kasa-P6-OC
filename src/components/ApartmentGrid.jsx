@@ -8,7 +8,12 @@ function ApartmentGrid() {
     <div className="gallery">
       {/* Itération sur la liste des appartements */}
       {apartmentsData.map(apartment => (
-        <ApartmentCard key={apartment.id} apartment={apartment} />
+        <ApartmentCard
+          key={apartment.id}
+          title={apartment.title}
+          cover={apartment.cover}
+          id={apartment.id}
+        />
       ))}
     </div>
   )

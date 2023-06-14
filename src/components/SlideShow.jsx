@@ -9,17 +9,37 @@ export function Slideshow({ photos }) {
 
   const nextPhoto = () => {
     setCurrentImg(prevImg => (prevImg + 1) % numberOfImages)
+    // La fonction `nextPhoto` est utilisée pour passer à l'image suivante dans le diaporama.
+    // Elle met à jour l'état `currentImg` en utilisant la fonction `setCurrentImg`.
+
+    // La valeur passée à `setCurrentImg` est une fonction fléchée `(prevImg => (prevImg + 1) % numberOfImages)`.
+    // Cette fonction prend l'ancienne valeur de `currentImg` (appelée `prevImg`) et ajoute 1 pour passer à l'index de l'image suivante.
+
+    // L'opération `(prevImg + 1) % numberOfImages` assure que l'index reste dans la plage valide des images disponibles.
+    // L'opérateur `%` (modulo) calcule le reste de la division entre `(prevImg + 1)` et `numberOfImages`,
+    // ce qui permet de revenir à 0 une fois que l'index atteint la dernière image.
+    // Cela crée un effet de boucle dans le diaporama, où le passage de la dernière image mène à la première image.
   }
 
   const previousPhoto = () => {
     setCurrentImg(prevImg => (prevImg - 1 + numberOfImages) % numberOfImages)
+    // La fonction `previousPhoto` est utilisée pour passer à l'image précédente dans le diaporama.
+    // Elle met à jour l'état `currentImg` en utilisant la fonction `setCurrentImg`.
+
+    // La valeur passée à `setCurrentImg` est une fonction fléchée `(prevImg => (prevImg - 1 + numberOfImages) % numberOfImages)`.
+    // Cette fonction prend l'ancienne valeur de `currentImg` (appelée `prevImg`), soustrait 1 et ajoute `numberOfImages`
+    // pour s'assurer que l'index reste dans la plage valide des images disponibles.
+
+    // L'opération `(prevImg - 1 + numberOfImages) % numberOfImages` effectue un ajustement cyclique de l'index,
+    // où la soustraction de 1 peut entraîner un nombre négatif, puis l'addition de `numberOfImages`
+    // et le modulo assure que l'index reste dans la plage valide des images.
   }
 
   const handleKeyDown = event => {
     if (event.key === 'ArrowRight') {
-      nextPhoto()
+      nextPhoto() // Appeler la fonction `nextPhoto` lorsque la touche "ArrowRight" est enfoncée
     } else if (event.key === 'ArrowLeft') {
-      previousPhoto()
+      previousPhoto() // Appeler la fonction `previousPhoto` lorsque la touche "ArrowLeft" est enfoncée
     }
   }
 
@@ -39,10 +59,10 @@ export function Slideshow({ photos }) {
       <span
         className={
           numberOfImages > 1
-            ? 'slideshow-button slideshow-back'
-            : 'slideshow-button slideshow-back slideshow-button-hidden'
+            ? 'slideshow-button slideshow-back' // Ajoute la classe 'slideshow-back' si le nombre d'images est supérieur à 1
+            : 'slideshow-button slideshow-back slideshow-button-hidden' // Ajoute les classes 'slideshow-back' et 'slideshow-button-hidden' si le nombre d'images est inférieur ou égal à 1
         }
-        onClick={previousPhoto}
+        onClick={previousPhoto} // Lorsque le bouton précédent est cliqué, appeler la fonction `previousPhoto`
       >
         <img src={backButton} alt="back button" />
       </span>
@@ -52,10 +72,10 @@ export function Slideshow({ photos }) {
         <img
           src={item}
           alt={`Apartment - ${index + 1}`}
-          className={`slideshow-image slideshow-image-${index}`}
-          key={`Apartment - ${index}`}
+          className={`slideshow-image slideshow-image-${index}`} // Ajoute la classe 'slideshow-image' et 'slideshow-image-X' où X est l'index de l'image
+          key={`Apartment - ${index}`} // Clé unique pour chaque image
           style={{
-            transform: `translateX(calc((${index} - ${currentImg}) * 100%))`
+            transform: `translateX(calc((${index} - ${currentImg}) * 100%))` // Applique une transformation CSS pour déplacer l'image horizontalement
           }}
         />
       ))}
@@ -64,10 +84,10 @@ export function Slideshow({ photos }) {
       <span
         className={
           numberOfImages > 1
-            ? 'slideshow-button slideshow-forward'
-            : 'slideshow-button slideshow-forward slideshow-button-hidden'
+            ? 'slideshow-button slideshow-forward' // Ajoute la classe 'slideshow-forward' si le nombre d'images est supérieur à 1
+            : 'slideshow-button slideshow-forward slideshow-button-hidden' // Ajoute les classes 'slideshow-forward' et 'slideshow-button-hidden' si le nombre d'images est inférieur ou égal à 1
         }
-        onClick={nextPhoto}
+        onClick={nextPhoto} // Lorsque le bouton suivant est cliqué, appeler la fonction `nextPhoto`
       >
         <img src={forwardButton} alt="forward button" />
       </span>

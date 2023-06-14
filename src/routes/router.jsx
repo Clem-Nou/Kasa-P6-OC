@@ -1,4 +1,4 @@
-import { createBrowserRouter, Outlet } from 'react-router-dom'
+import { createHashRouter, Outlet } from 'react-router-dom'
 import Navbar from '../layout/Navbar'
 import Footer from '../layout/Footer'
 import Home from '../pages/Home'
@@ -19,7 +19,7 @@ const HeaderFooterLayout = () => {
 }
 
 // Création du navigateur de l'application avec les différentes routes
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     element: <HeaderFooterLayout />, // Utilisation du layout principal pour toutes les routes
     errorElement: <ErrorPageNotFound />, // Utilisation de la page d'erreur 404 pour les erreurs de route

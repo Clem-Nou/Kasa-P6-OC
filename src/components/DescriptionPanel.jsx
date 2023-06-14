@@ -14,15 +14,19 @@ export function DescriptionPanel({ title, content, openByDefault }) {
       <h3 className="description_panel_title" onClick={toggleContent}>
         <span>{title}</span>
         {/* Icône indiquant si le contenu est visible ou masqué */}
-        {isContentVisible ? (
-          <i className="fa-solid fa-chevron-up"></i>
-        ) : (
-          <i className="fa-solid fa-chevron-down"></i>
-        )}
+        <i
+          className={`fa-solid fa-chevron-${isContentVisible ? 'up' : 'down'}`}
+        ></i>
       </h3>
 
       {/* Contenu du panneau de description */}
-      <div className="description_panel_content">{content}</div>
+      <div
+        className={`description_panel_content ${
+          isContentVisible ? 'visible' : ''
+        }`}
+      >
+        {content}
+      </div>
     </div>
   )
 }

@@ -41,12 +41,16 @@ export function ApartmentHeader({
         <div className="apartment_owner_stars">
           {/* Affichage du rating sous forme d'étoiles */}
           {[...Array(starCount)].map((_, index) => (
+            // On crée un tableau contenant 'starCount' éléments vides ('Undefined')
             <i
               className={`fa-solid fa-star ${
                 index < rating ? 'star_on' : 'star_off'
               }`}
               key={index}
             ></i>
+            // Affichage de chaque étoile, si l'index est inférieur à la note, l'étoile est activée, sinon elle est désactivée
+            // index = 0 : 0 < 1, donc l'étoile correspondante sera "allumée" (star on).
+            // index = 1 : 1 < 1, donc l'étoile correspondante sera "éteinte" (star off).
           ))}
         </div>
       </div>

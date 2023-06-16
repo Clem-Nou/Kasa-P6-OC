@@ -3,6 +3,9 @@ import './Banner.css'
 
 export function Banner({ img, text, alt, source }) {
   return (
+    // Si la valeur de "source" est "about", la classe sera "banner-container banner-container-about" et "banner-overlay banner-overlay-about"
+    // Sinon, la classe sera simplement "banner-container" et "banner-overlay"
+
     <section
       className={
         source === 'about'

@@ -4,6 +4,10 @@ import forwardButton from '../assets/forward-button.svg'
 import backButton from '../assets/back-button.svg'
 
 export function Slideshow({ photos }) {
+  // Mise en place de 2 variables
+  // CurrentImg est initialisé à 0 avec le hook useState, ainsi la première image sera affichée
+  // setCurrentImg est une fonction spéciale qui nous permet de mettre à jour la valeur de la variable currentImg.
+  // Lorsque nous l'appelons avec un nouveau numéro d'image, cela met à jour la valeur de currentImg avec ce nouveau numéro.
   const [currentImg, setCurrentImg] = useState(0)
   const numberOfImages = photos.length
 
@@ -12,7 +16,6 @@ export function Slideshow({ photos }) {
     // La fonction `nextPhoto` est utilisée pour passer à l'image suivante dans le diaporama.
     // Elle met à jour l'état `currentImg` en utilisant la fonction `setCurrentImg`.
 
-    // La valeur passée à `setCurrentImg` est une fonction fléchée `(prevImg => (prevImg + 1) % numberOfImages)`.
     // Cette fonction prend l'ancienne valeur de `currentImg` (appelée `prevImg`) et ajoute 1 pour passer à l'index de l'image suivante.
 
     // L'opération `(prevImg + 1) % numberOfImages` assure que l'index reste dans la plage valide des images disponibles.
@@ -26,7 +29,6 @@ export function Slideshow({ photos }) {
     // La fonction `previousPhoto` est utilisée pour passer à l'image précédente dans le diaporama.
     // Elle met à jour l'état `currentImg` en utilisant la fonction `setCurrentImg`.
 
-    // La valeur passée à `setCurrentImg` est une fonction fléchée `(prevImg => (prevImg - 1 + numberOfImages) % numberOfImages)`.
     // Cette fonction prend l'ancienne valeur de `currentImg` (appelée `prevImg`), soustrait 1 et ajoute `numberOfImages`
     // pour s'assurer que l'index reste dans la plage valide des images disponibles.
 

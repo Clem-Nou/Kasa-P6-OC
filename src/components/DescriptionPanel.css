@@ -5,8 +5,8 @@
   font-size: 18px;
   position: relative;
   overflow: hidden;
-  transition: height 0.3s ease;
-  height: 6rem; /* Adjust the initial height as needed */
+  transition: height 0.3s ease; /* Add transition property */
+  height: 6rem;
 }
 
 .description_panel.open {
@@ -38,10 +38,10 @@
   opacity: 0;
   transition: opacity 0.3s ease, transform 0.3s ease;
   transform-origin: top;
-  transform: scaleY(0);
+  transform: scaleY(0); /* Add transition property */
 }
 
 .description_panel.open .description_panel_content {
   opacity: 1;
-  transform: scaleY(1);
+  transform: scaleY(1); /* Add transition property */
 }
